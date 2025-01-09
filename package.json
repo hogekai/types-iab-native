@@ -5,6 +5,18 @@
   "scripts": {
     "build": "tsc"
   },
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts",
+      "types": "./src/index.ts"
+    },
+    "./v12": {
+      "import": "./src/v12/index.ts",
+      "require": "./src/v12/index.ts",
+      "types": "./src/v12/index.ts"
+    }
+  },
   "keywords": [
     "Native",
     "IAB Tech Lab",
@@ -33,5 +45,20 @@
   ],
   "engines": {
     "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "require": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./v12": {
+        "import": "./dist/v12/index.js",
+        "require": "./dist/v12/index.js",
+        "types": "./dist/v12/index.d.ts"
+      }
+    }
   }
 }
