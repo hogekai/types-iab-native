@@ -52,10 +52,10 @@ export interface NativeRequest {
   seq?: number;
 
   /**
-   * An array of Asset Objects.
+   * An array of Asset s.
    * Any bid response must comply with the array of elements expressed in the bid request.
    */
-  assets: AssetObject[];
+  assets: Asset[];
 
   /**
    * Whether the supply source / impression supports returning an assetsurl instead of an asset object.
@@ -91,7 +91,7 @@ export interface NativeRequest {
 }
 
 /**
- * Event Tracker Object for the native request
+ * Event Tracker  for the native request
  * Specifies the types of events the bidder can request to be tracked in the bid response
  */
 interface EventTracker {
@@ -114,10 +114,10 @@ interface EventTracker {
 }
 
 /**
- * Asset Object for the native request
+ * Asset  for the native request
  * Note: each asset object may contain only one of title, img, data or video.
  */
-interface AssetObject {
+interface Asset {
   /**
    * Unique asset ID, assigned by exchange.
    * Typically a counter for the array.
@@ -133,22 +133,22 @@ interface AssetObject {
   /**
    * Title object for title assets
    */
-  title?: TitleRequestObject;
+  title?: TitleRequest;
 
   /**
    * Image object for image assets
    */
-  img?: ImageRequestObject;
+  img?: ImageRequest;
 
   /**
    * Video object for video assets
    */
-  video?: VideoRequestObject;
+  video?: VideoRequest;
 
   /**
    * Data object for brand name, description, ratings, prices etc
    */
-  data?: DataRequestObject;
+  data?: DataRequest;
 
   /**
    * This object is a placeholder that may contain custom JSON
@@ -157,10 +157,10 @@ interface AssetObject {
 }
 
 /**
- * Title Request Object
+ * Title Request 
  * To be used for title element of the Native ad
  */
-interface TitleRequestObject {
+interface TitleRequest {
   /**
    * Maximum length of the text in the title element.
    * Recommended to be 25, 90, or 140.
@@ -174,10 +174,10 @@ interface TitleRequestObject {
 }
 
 /**
- * Image Request Object
+ * Image Request 
  * To be used for all image elements of the Native ad such as Icons, Main Image, etc.
  */
-interface ImageRequestObject {
+interface ImageRequest {
   /**
    * Type ID of the image element supported by the publisher.
    * See Table Image Asset Types.
@@ -221,11 +221,11 @@ interface ImageRequestObject {
 }
 
 /**
- * Video Request Object
+ * Video Request 
  * To be used for all video elements supported in the Native Ad.
  * Corresponds to the Video object of OpenRTB.
  */
-interface VideoRequestObject {
+interface VideoRequest {
   /**
    * Content MIME types supported.
    * e.g., "video/x-ms-wmv", "video/x-flv", "video/mp4"
@@ -255,11 +255,11 @@ interface VideoRequestObject {
 }
 
 /**
- * Data Request Object
+ * Data Request 
  * To be used for all non-core elements of the native unit such as
  * Brand Name, Ratings, Review Count, Stars, Download count, descriptions etc.
  */
-interface DataRequestObject {
+interface DataRequest {
   /**
    * Type ID of the element supported by the publisher.
    * See Data Asset Types table.

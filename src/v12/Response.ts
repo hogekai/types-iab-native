@@ -20,7 +20,7 @@ export interface NativeResponse {
    * List of native ad's assets
    * Required if no assetsurl. Recommended as fallback even if assetsurl is provided
    */
-  assets?: AssetResponseObject[];
+  assets?: AssetResponse[];
 
   /**
    * URL of an alternate source for the assets object
@@ -37,7 +37,7 @@ export interface NativeResponse {
   /**
    * Destination Link. This is default link object for the ad
    */
-  link: LinkResponseObject;
+  link: LinkResponse;
 
   /**
    * Array of impression tracking URLs
@@ -56,7 +56,7 @@ export interface NativeResponse {
   /**
    * Array of tracking objects to run with the ad
    */
-  eventtrackers?: EventTrackerResponseObject[];
+  eventtrackers?: EventTrackerResponse[];
 
   /**
    * URL of a page informing the user about the buyer's targeting activity
@@ -70,11 +70,11 @@ export interface NativeResponse {
 }
 
 /**
- * Asset Response Object
- * Corresponds to the Asset Object in the request
+ * Asset Response 
+ * Corresponds to the Asset  in the request
  * Note: only one of {title,img,video,data} should be present in each object
  */
-export interface AssetResponseObject {
+export interface AssetResponse {
   /**
    * Optional if assetsurl/dcourl is being used
    * Required if embedded asset is being used
@@ -88,31 +88,31 @@ export interface AssetResponseObject {
   required?: number;
 
   /** Title object for title assets */
-  title?: TitleResponseObject;
+  title?: TitleResponse;
 
   /** Image object for image assets */
-  img?: ImageResponseObject;
+  img?: ImageResponse;
 
   /** Video object for video assets */
-  video?: VideoResponseObject;
+  video?: VideoResponse;
 
   /** Data object for ratings, prices etc */
-  data?: DataResponseObject;
+  data?: DataResponse;
 
   /**
    * Link object for call to actions
    * Applies if the asset item is activated (clicked)
    */
-  link?: LinkResponseObject;
+  link?: LinkResponse;
 
   /** Custom JSON agreed to by the parties */
   ext?: Record<string, unknown>;
 }
 
 /**
- * Title Response Object
+ * Title Response 
  */
-export interface TitleResponseObject {
+export interface TitleResponse {
   /** The text associated with the text element */
   text: string;
 
@@ -127,9 +127,9 @@ export interface TitleResponseObject {
 }
 
 /**
- * Image Response Object
+ * Image Response 
  */
-export interface ImageResponseObject {
+export interface ImageResponse {
   /**
    * The type of image element being submitted
    * Required for assetsurl or dcourl responses
@@ -156,10 +156,10 @@ export interface ImageResponseObject {
 }
 
 /**
- * Data Response Object
+ * Data Response 
  * Used for all miscellaneous elements of the native unit
  */
-export interface DataResponseObject {
+export interface DataResponse {
   /**
    * The type of data element being submitted
    * Required for assetsurl/dcourl responses
@@ -183,19 +183,19 @@ export interface DataResponseObject {
 }
 
 /**
- * Video Response Object
+ * Video Response 
  * Contains a conforming VAST tag as a value
  */
-export interface VideoResponseObject {
+export interface VideoResponse {
   /** VAST XML */
   vasttag: string;
 }
 
 /**
- * Link Response Object
+ * Link Response 
  * Used for 'call to action' assets, or other links from the Native ad
  */
-export interface LinkResponseObject {
+export interface LinkResponse {
   /** Landing URL of the clickable link */
   url: string;
 
@@ -210,10 +210,10 @@ export interface LinkResponseObject {
 }
 
 /**
- * Event Tracker Response Object
+ * Event Tracker Response 
  * Specifies the types of events the bidder wishes to track and the URLs/information to track them
  */
-export interface EventTrackerResponseObject {
+export interface EventTrackerResponse {
   /** Type of event to track */
   event: EventType;
 
