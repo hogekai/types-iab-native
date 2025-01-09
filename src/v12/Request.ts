@@ -94,7 +94,7 @@ export interface NativeRequest {
  * Event Tracker  for the native request
  * Specifies the types of events the bidder can request to be tracked in the bid response
  */
-interface EventTracker {
+export interface EventTracker {
   /**
    * Type of event available for tracking.
    * See Event Types table.
@@ -117,7 +117,7 @@ interface EventTracker {
  * Asset  for the native request
  * Note: each asset object may contain only one of title, img, data or video.
  */
-interface Asset {
+export interface Asset {
   /**
    * Unique asset ID, assigned by exchange.
    * Typically a counter for the array.
@@ -160,7 +160,7 @@ interface Asset {
  * Title Request 
  * To be used for title element of the Native ad
  */
-interface TitleRequest {
+export interface TitleRequest {
   /**
    * Maximum length of the text in the title element.
    * Recommended to be 25, 90, or 140.
@@ -177,7 +177,7 @@ interface TitleRequest {
  * Image Request 
  * To be used for all image elements of the Native ad such as Icons, Main Image, etc.
  */
-interface ImageRequest {
+export interface ImageRequest {
   /**
    * Type ID of the image element supported by the publisher.
    * See Table Image Asset Types.
@@ -225,7 +225,7 @@ interface ImageRequest {
  * To be used for all video elements supported in the Native Ad.
  * Corresponds to the Video object of OpenRTB.
  */
-interface VideoRequest {
+export interface VideoRequest {
   /**
    * Content MIME types supported.
    * e.g., "video/x-ms-wmv", "video/x-flv", "video/mp4"
@@ -259,7 +259,7 @@ interface VideoRequest {
  * To be used for all non-core elements of the native unit such as
  * Brand Name, Ratings, Review Count, Stars, Download count, descriptions etc.
  */
-interface DataRequest {
+export interface DataRequest {
   /**
    * Type ID of the element supported by the publisher.
    * See Data Asset Types table.
