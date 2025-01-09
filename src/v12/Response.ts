@@ -9,7 +9,7 @@ import {
  * Native Markup Response Object
  * The native object is the top level JSON object which identifies a native response
  */
-export interface NativeResponseObject {
+export interface NativeResponse {
   /**
    * Version of the Native Markup version in use
    * @default "1.2"
