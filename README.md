@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> **This repository is archived.** Development continues in the [hogekai/iab-types](https://github.com/hogekai/iab-types/tree/main/packages/types-iab-native) monorepo, published on npm as [`iab-native`](https://www.npmjs.com/package/iab-native).
+
 # types-iab-native
 
 TypeScript type definitions for IAB Tech Lab`s Native Ad
